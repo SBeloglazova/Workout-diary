@@ -1,0 +1,255 @@
+:root {
+  --color-brand--1: #ffb545;
+  --color-brand--2: #00c46a;
+
+  --color-dark--1: linear-gradient(
+    35deg,
+    #b92b27 0%,
+    rgba(21, 101, 192, 1) 100%
+  );
+  --color-dark--2: #226093;
+  --color-light--1: #aaa;
+  --color-light--2: #ececec;
+  --color-light--3: rgb(214, 222, 224);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  color: var(--color-light--2);
+  font-weight: 400;
+  line-height: 1.6;
+  height: 100vh;
+  overscroll-behavior-y: none;
+  background-color: #fff;
+  padding: 2.5rem;
+  text-shadow: 0.2px 0.2px 0.1px black;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+/* a:visited {
+  color: var(--color-brand--1);
+} */
+
+.sidebar {
+  flex-basis: 62rem;
+  background: var(--color-dark--1);
+  padding: 3rem 5rem 4rem 5rem;
+  display: flex;
+  flex-direction: column;
+  background-size: 200% 200%;
+  animation: gradient 10s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+.header {
+  align-self: center;
+  margin-bottom: 2rem;
+  font-size: 3.5rem;
+}
+
+.workouts {
+  list-style: none;
+  height: 77vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.workouts::-webkit-scrollbar {
+  width: 0;
+}
+
+.workout {
+  backdrop-filter: blur(300px);
+  -webkit-backdrop-filter: blur(300px);
+  border-radius: 5px;
+  border: 0.1px solid gray;
+  padding: 1.5rem 2.25rem;
+  margin-bottom: 1.75rem;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 0.75rem 1.5rem;
+}
+.workout--running {
+  border-bottom: 5px solid var(--color-brand--2);
+}
+.workout--cycling {
+  border-bottom: 5px solid var(--color-brand--2);
+}
+
+.workout__title {
+  font-size: 1.7rem;
+  font-weight: 600;
+  grid-column: 1 / -1;
+}
+
+.workout__details {
+  display: flex;
+  align-items: baseline;
+}
+
+.workout__icon {
+  font-size: 1.8rem;
+  margin-right: 0.2rem;
+  height: 0.28rem;
+}
+
+.workout__value {
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+}
+
+.workout__unit {
+  font-size: 1.1rem;
+  color: var(--color-light--1);
+  text-transform: uppercase;
+  font-weight: 800;
+  text-shadow: 0.2px 0.2px 0.1px black;
+}
+
+.form {
+  backdrop-filter: blur(300px);
+  -webkit-backdrop-filter: blur(300px);
+  border: 0.1px solid gray;
+  border-radius: 5px;
+  padding: 1.5rem 2.75rem;
+  margin-bottom: 1.75rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem 2.5rem;
+  text-shadow: 0.2px 0.2px 0.1px black;
+  height: 9.25rem;
+  transition: all 0.5s, transform 1ms;
+}
+
+.form.hidden {
+  transform: translateY(-30rem);
+  height: 0;
+  padding: 0 2.25rem;
+  margin-bottom: 0;
+  opacity: 0;
+}
+
+.form__row {
+  display: flex;
+  align-items: center;
+}
+
+.form__row--hidden {
+  display: none;
+}
+
+.form__label {
+  flex: 0 0 50%;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.form__input {
+  width: 100%;
+  padding: 0.3rem 1.1rem;
+  font-family: inherit;
+  font-size: 1.4rem;
+  border: none;
+  border-radius: 3px;
+  background-color: var(--color-light--3);
+  transition: all 0.2s;
+  text-shadow: 0.2px 0.2px 0.1px black;
+}
+
+.form__input:focus {
+  outline: none;
+  background-color: #fff;
+}
+
+.form__btn {
+  display: none;
+}
+
+.copyright {
+  margin-top: auto;
+  font-size: 1.3rem;
+  text-align: center;
+  color: var(--color-light--1);
+  text-shadow: 0.2px 0.2px 0.1px black;
+}
+
+.twitter-link:link,
+.twitter-link:visited {
+  color: var(--color-light--1);
+  transition: all 0.2s;
+  text-shadow: 0.2px 0.2px 0.1px black;
+}
+
+.twitter-link:hover,
+.twitter-link:active {
+  color: var(--color-light--2);
+  text-shadow: 0.2px 0.2px 0.1px black;
+}
+
+#map {
+  flex: 1;
+  height: 100%;
+  background-color: var(--color-light--1);
+}
+
+.leaflet-popup .leaflet-popup-content-wrapper {
+  background-color: black;
+  color: var(--color-light--2);
+  border-radius: 5px;
+  padding-right: 0.6rem;
+  text-shadow: 0.2px 0.2px 0.1px black;
+  font-size: 1.5rem;
+}
+
+.mark-popup .leaflet-popup-content-wrapper {
+  border-bottom: 5px solid var(--color-brand--2);
+}
+
+.button {
+  display:inline-flexbox;
+  padding: 15px 15px;
+  border-radius: 10rem;
+  color: #eff4f2;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  letter-spacing: .15rem;
+  transition: all .3s;
+  position:relative;
+  text-align:center;
+  overflow: hidden;
+  z-index:1;
+  justify-content: space-between;
+  text-decoration: none;
+  background-color: #00c46a;
+  border: none;
+  cursor: pointer;
+  width: 30%;
+}
+
+.button.hidden {
+  display: none;
+}

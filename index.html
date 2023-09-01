@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!--это код для использования карт на сайте-->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <script
+      defer
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <script defer src="script.js"></script>
+
+    <title>Дневник тренировок</title>
+  </head>
+  <body>
+    <div class="sidebar">
+      <h1 class="header">Дневник тренировок</h1>
+
+      <ul class="workouts">
+        <form class="form hidden">
+          <div class="form__row">
+            <label class="form__label">Тип</label>
+            <select class="form__input form__input--type">
+              <option value="running">Бег</option>
+              <option value="cycling">Велосипед</option>
+            </select>
+          </div>
+          <div class="form__row">
+            <label class="form__label">Дистанция</label>
+            <input class="form__input form__input--distance" placeholder="км" />
+          </div>
+          <div class="form__row">
+            <label class="form__label">Длительность</label>
+            <input
+              class="form__input form__input--duration"
+              placeholder="мин"
+            />
+          </div>
+          <div class="form__row">
+            <label class="form__label">Темп</label>
+            <input
+              class="form__input form__input--cadence"
+              placeholder="шагов/мин"
+            />
+          </div>
+          <div class="form__row form__row--hidden">
+            <label class="form__label">Высота</label>
+            <input
+              class="form__input form__input--elevation"
+              placeholder="метры"
+            />
+          </div>
+          <button class="form__btn">OK</button>
+        </form>
+
+        <!-- <li class="workout workout--running" data-id="1234567890">
+          <h2 class="workout__title">Бег - 10 Мая</h2>
+          <div class="workout__details">
+            <span class="workout__icon">🏃‍♂️</span>
+            <span class="workout__value">3.2</span>
+            <span class="workout__unit">км</span>
+          </div>
+          <div class="workout__details">
+            <span class="workout__icon">⏱</span>
+            <span class="workout__value">24</span>
+            <span class="workout__unit">мин</span>
+          </div>
+          <div class="workout__details">
+            <span class="workout__icon">⚡️</span>
+            <span class="workout__value">4.6</span>
+            <span class="workout__unit">мин/км</span>
+          </div>
+          <div class="workout__details">
+            <span class="workout__icon">🦶🏼</span>
+            <span class="workout__value">178</span>
+            <span class="workout__unit">шаг</span>
+          </div>
+        </li>
+
+        <li class="workout workout--cycling" data-id="1234567891">
+          <h2 class="workout__title">Велосипед - 11 Мая</h2>
+          <div class="workout__details">
+            <span class="workout__icon">🚴‍♀️</span>
+            <span class="workout__value">27</span>
+            <span class="workout__unit">км</span>
+          </div>
+          <div class="workout__details">
+            <span class="workout__icon">⏱</span>
+            <span class="workout__value">95</span>
+            <span class="workout__unit">мин</span>
+          </div>
+          <div class="workout__details">
+            <span class="workout__icon">⚡️</span>
+            <span class="workout__value">16</span>
+            <span class="workout__unit">км/час</span>
+          </div>
+          <div class="workout__details">
+            <span class="workout__icon">⛰</span>
+            <span class="workout__value">223</span>
+            <span class="workout__unit">м</span>
+          </div>
+        </li> -->
+      </ul>
+
+      <button class="button hidden">Очистить</button>
+    </div>
+
+    <div id="map"></div>
+  </body>
+</html>
