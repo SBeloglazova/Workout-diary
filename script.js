@@ -402,3 +402,5 @@ class App {
 
 //запуск приложения
 const app = new App();
+
+console.log("Hello world!");
